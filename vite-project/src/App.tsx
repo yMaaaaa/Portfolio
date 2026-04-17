@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import Card from "./components/Card/Card";
+import { Navbar, Home, Projects, Contact, Personal } from "./exports";
 
 function App() {
-  const [] = useState(0);
-
   return (
-    <>
-      <Navbar />
-      <div className="app-content">
-        <Card />
+    <Router>
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/personal" element={<Personal />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 

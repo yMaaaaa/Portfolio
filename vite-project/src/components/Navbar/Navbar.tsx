@@ -1,56 +1,50 @@
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           <span className="logo-text">Portfolio</span>
-        </div>
+        </Link>
         <ul className="nav-list">
           <li className="nav-item">
-            <a
-              href="#"
-              onClick={(e) => handleScroll(e, "home")}
-              className="nav-link"
+            <Link
+              to="/"
+              className={`nav-link ${isActive("/") ? "active" : ""}`}
             >
               Accueil
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              href="#"
-              onClick={(e) => handleScroll(e, "about")}
-              className="nav-link"
-            >
-              À propos
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              href="#"
-              onClick={(e) => handleScroll(e, "projects")}
-              className="nav-link"
+            <Link
+              to="/projects"
+              className={`nav-link ${isActive("/projects") ? "active" : ""}`}
             >
               Projets
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              href="#"
-              onClick={(e) => handleScroll(e, "contact")}
-              className="nav-link"
+            <Link
+              to="/personal"
+              className={`nav-link ${isActive("/personal") ? "active" : ""}`}
+            >
+              Vie Perso
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/contact"
+              className={`nav-link ${isActive("/contact") ? "active" : ""}`}
             >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
