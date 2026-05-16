@@ -14,40 +14,80 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
-      title: "Gestion d'Actifs IT",
+      title: "Gestion d'un Serveur Windows",
       description:
-        "Système de gestion d'inventaire numérique pour identifier et tracker les ressources informatiques en temps réel.",
-      technologies: ["MySQL", "PHP", "JavaScript", "UI/UX"],
-      category: "Backend",
+        "Installation, configuration et maintenance d'un serveur Windows pour la gestion des utilisateurs, des groupes, et des ressources partagées avec Active Directory.",
+      technologies: ["Windows Server", "Maintenance", "Configuration", "UI/UX"],
+      category: "Système",
       icon: "🖥️",
     },
     {
-      title: "Système de Support Utilisateur",
+      title: "Site CV en ligne",
       description:
-        "Plateforme complète de gestion des demandes de support et des incidents avec suivi en temps réel et notifications.",
-      technologies: ["React", "TypeScript", "Node.js", "MySQL"],
-      category: "Full Stack",
+        "Site crée pour présenter mon parcours, mes compétences et mes projets. Design moderne, responsive et optimisé pour une expérience utilisateur fluide.",
+      technologies: ["HTML5", "CSS3", "JavaScript"],
+      category: "Frontend",
       icon: "🎯",
     },
     {
-      title: "Portal de Présence en Ligne",
+      title: "Création d'un site et gestion de celui-ci",
       description:
-        "Développement et évolution de sites web d'entreprise avec optimisation SEO et promotion digitale.",
-      technologies: ["React", "Next.js", "SEO", "CSS3"],
-      category: "Frontend",
+        "Developpement d'un site web complet avec wordpress, gestion du contenu, relation avec une base de données MySQL, intégrant du php.",
+      technologies: ["WordPress", "HTML5", "CSS3", "PHP", "MySQL"],
+      category: "Full Stack",
       icon: "🌐",
     },
     {
-      title: "Outil de Gestion de Projets",
+      title: "Site de vente de produits hardware en ligne",
       description:
-        "Application de suivi de projets avec analyse des objectifs et évaluation des indicateurs de performance.",
-      technologies: ["Angular", "TypeScript", "Java", "PostgreSQL"],
+        "Application de vente en ligne pour une boutique de matériel informatique, avec gestion des produits, panier d'achat, et interface d'administration pour la gestion des commandes.",
+      technologies: ["Angular", "TypeScript", "Java", "MySQL"],
       category: "Full Stack",
-      icon: "📊",
+      icon: "🛒",
+    },
+    {
+      title: "Portfolio Personnel - v1",
+      description:
+        "Premier portfolio avec design moderne, animation fluides et responsive design. Intégration avec formsubmit pour le contact direct et déploiement sur GitHub Pages.",
+      technologies: ["React", "CSS3", "Vite", "GitHub Pages"],
+      category: "Frontend",
+      icon: "⭐",
+    },
+    {
+      title: "API RESTful E-commerce",
+      description:
+        "Architecture backend complète pour plateforme e-commerce avec authentification JWT, et système de notification par email.",
+      technologies: ["Node.js", "Express", "PostgreSQL", "JWT"],
+      category: "Backend",
+      icon: "💳",
+    },
+    {
+      title: "Top 114/812 Passtonhack 2025/2026 + Top 10% TryHackMe",
+      description:
+        "Accomplissement de défis de cybersécurité sur les plateformes Passtonhack (21/22) et TryHackMe, démontrant des compétences avancées en sécurité informatique et en résolution de problèmes complexes.",
+      technologies: [
+        "Kali Linux",
+        "Wireshark",
+        "Metasploit",
+        "Nmap",
+        "Hydra",
+        "OSINT",
+        "Reverse Engineering",
+        "Cryptographie",
+      ],
+      category: "Cybersécurité",
+      icon: "🔒",
     },
   ];
 
-  const categories = ["Tous", "Frontend", "Backend", "Full Stack"];
+  const categories = [
+    "Tous",
+    "Frontend",
+    "Backend",
+    "Full Stack",
+    "Système",
+    "Cybersécurité",
+  ];
 
   const filteredProjects =
     activeCategory === "Tous"

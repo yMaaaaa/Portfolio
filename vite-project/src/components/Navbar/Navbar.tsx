@@ -32,6 +32,14 @@ export default function Navbar() {
           </li>
           <li className="nav-item">
             <Link
+              to="/veille"
+              className={`nav-link ${isActive("/veille") ? "active" : ""}`}
+            >
+              Veille
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
               to="/personal"
               className={`nav-link ${isActive("/personal") ? "active" : ""}`}
             >

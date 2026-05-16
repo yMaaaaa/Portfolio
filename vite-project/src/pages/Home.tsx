@@ -117,9 +117,10 @@ export default function Home() {
                       <div className="exp-item">
                         <strong>Formation</strong>
                         <ul>
-                          <li>BTS SIO</li>
-                          <li>Formation DWFS (5 mois)</li>
+                          <li>BTS SIO (Depuis 2025)</li>
+                          <li>Formation DWFS - 5 mois</li>
                           <li>L1 Informatique</li>
+                          <li>L1 LLCER - Anglais</li>
                         </ul>
                       </div>
                       <div className="exp-item">
@@ -128,6 +129,8 @@ export default function Home() {
                           <li>React & TypeScript</li>
                           <li>Angular & PHP</li>
                           <li>Java & Python</li>
+                          <li>Node.js & Express</li>
+                          <li>PostgreSQL & MySQL</li>
                         </ul>
                       </div>
                     </div>
@@ -161,11 +164,15 @@ export default function Home() {
                     <span className="skill-chip">React</span>
                     <span className="skill-chip">TypeScript</span>
                     <span className="skill-chip">Angular</span>
+                    <span className="skill-chip">Vue.js</span>
                     <span className="skill-chip">PHP</span>
                     <span className="skill-chip">Java</span>
                     <span className="skill-chip">Python</span>
+                    <span className="skill-chip">Node.js</span>
                     <span className="skill-chip">MySQL</span>
                     <span className="skill-chip">PostgreSQL</span>
+                    <span className="skill-chip">Vite</span>
+                    <span className="skill-chip">Git</span>
                   </div>
                 </div>
               </div>

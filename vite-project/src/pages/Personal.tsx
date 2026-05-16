@@ -5,32 +5,34 @@ export default function Personal() {
     {
       icon: "🎮",
       title: "Gaming",
-      description: "Passionné de jeux de stratégie et RPG",
-      games: "Baldur's Gate 3, Stardew Valley, Minecraft",
+      description: "Passionné de FPS, MMORPG et jeux d'aventure.",
+      games: "Counter-Strike, World of Warcraft, The Witcher 3, Cyberpunk 2077",
     },
     {
-      icon: "❄️",
-      title: "Sports d'Hiver",
-      description: "Adepte des pistes et de la montagne",
-      games: "Ski, Snowboard, Randonnées",
+      icon: "🎸",
+      title: "Guitare & MAO",
+      description:
+        "Passionné de musique, je joue de la guitare depuis 6 ans et je compose de la MAO depuis 1 an.",
+      games: "Métal, Electronique, Rap, OSTs, Rock",
     },
     {
-      icon: "🎵",
-      title: "Musique",
-      description: "Découvreur de nouveaux artistes",
-      games: "Rock, Électronique, Synthwave",
+      icon: "🖼️",
+      title: "Pokémon",
+      description: "Collectionneur de cartes Pokémon depuis l'enface.",
+      games: "2000+ cartes, échanges, événements",
     },
     {
-      icon: "📚",
-      title: "Culture",
-      description: "Amoureux de science-fiction",
-      games: "Lecture, Films, Documentaires",
+      icon: "🖥️",
+      title: "Anime & Series",
+      description: "Amoureux des animes et des séries.",
+      games:
+        "Evangelion, Cyberpunk Edgerunners, South Park, The Walking Dead, Serial Experiments Lain",
     },
     {
       icon: "⚡",
       title: "Innovation",
       description: "Fasciné par les nouvelles technologies",
-      games: "IA, Web3, Frameworks modernes",
+      games: "IA, Frameworks, VR, Hardware",
     },
     {
       icon: "🧠",
@@ -96,9 +98,9 @@ export default function Personal() {
               personnelle est essentiel.
             </p>
             <p>
-              Quand je ne suis pas en train de coder, tu me trouves probablement
-              à explorer des mondes de jeux vidéo, à dévaler les pistes de ski,
-              ou à découvrir de nouveaux artistes musicaux.
+              Quand je ne suis pas en train de coder, vous me trouverez
+              probablement à explorer des mondes de jeux vidéo, à faire de la
+              guitare ou de la MAO, ou bien à essayer de nouvelles choses.
             </p>
           </div>
         </div>

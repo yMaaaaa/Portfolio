@@ -88,7 +88,7 @@ export default function Contact() {
                       mdouteaud.pro@gmail.com
                     </a>
                   </p>
-                  <p className="info-subtext">Réponse sous 24h</p>
+                  <p className="info-subtext">Réponse sous 24h/48h</p>
                 </div>
 
                 <div className="info-card">

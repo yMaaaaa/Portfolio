@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #0d0d0d;
 }
 
 .app {
@@ -60,16 +60,16 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #667eea;
+  background: #ff1744;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #764ba2;
+  background: #ff0000;
 }
 
 /* Selection styling */
 ::selection {
-  background-color: #667eea;
+  background-color: #ff1744;
   color: white;
 }

@@ -9,3 +9,4 @@ export { default as Home } from "./pages/Home";
 export { default as Contact } from "./pages/Contact";
 export { default as Personal } from "./pages/Personal";
 export { default as Projects } from "./pages/Projects";
+export { default as Veille } from "./pages/Veille";
