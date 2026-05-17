@@ -1,5 +1,6 @@
 import "./Contact.css";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -25,32 +26,23 @@ export default function Contact() {
     setError("");
 
     try {
-      const response = await fetch(
-        "https://formsubmit.co/ajax/mdouteaud.pro@gmail.com",
+      await emailjs.send(
+        "service_bk1f6w3",
+        "template_e79yg6i",
         {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            subject: formData.subject,
-            message: formData.message,
-            _subject: `Nouveau message de ${formData.name}`,
-            _captcha: "false",
-          }),
+          from_name: formData.name,
+          reply_to: formData.email,
+          subject: formData.subject,
+          message: formData.message,
         },
+        "dXvlabuIz8Joye0NS",
       );
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setIsSubmitted(false), 5000);
-      } else throw new Error("Erreur lors de l'envoi");
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 5000);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Une erreur est survenue");
+      setError("Erreur lors de l'envoi, veuillez réessayer.");
     } finally {
       setIsLoading(false);
     }

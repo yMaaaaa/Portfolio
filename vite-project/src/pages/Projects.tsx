@@ -62,7 +62,7 @@ export default function Projects() {
       icon: "💳",
     },
     {
-      title: "Top 114/812 Passtonhack 2025/2026 + Top 10% TryHackMe",
+      title: "Top 114/812 Passtonhack 2025/2026 + Top 15% TryHackMe",
       description:
         "Accomplissement de défis de cybersécurité sur les plateformes Passtonhack (21/22) et TryHackMe, démontrant des compétences avancées en sécurité informatique et en résolution de problèmes complexes.",
       technologies: [

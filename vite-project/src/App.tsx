@@ -1,8 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import "./App.css";
 import { Navbar, Home, Projects, Contact, Personal, Veille } from "./exports";
 
 function App() {
+  useEffect(() => {
+    emailjs.init("dXvlabuIz8Joye0NS");
+  }, []);
+
   return (
     <Router basename="/Portfolio/">
       <div className="app">
