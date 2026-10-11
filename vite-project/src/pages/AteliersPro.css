@@ -1,0 +1,72 @@
+.ateliers-page {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.atelier-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+.atelier-card {
+  display: flex;
+  min-height: 310px;
+  flex-direction: column;
+}
+
+.atelier-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.atelier-card-top > span {
+  color: rgb(23 31 34 / 75%);
+  font: 500 0.9rem "Space Grotesk", sans-serif;
+}
+
+.atelier-card h2 {
+  font-size: 1.4rem;
+}
+
+.atelier-card .tag-container {
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.ateliers-callout {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 72px;
+  padding: clamp(28px, 5vw, 50px);
+  border: 1px solid rgb(23 31 34 / 12%);
+  border-radius: 26px;
+  background: linear-gradient(120deg, rgb(23 31 34 / 4%), transparent 70%);
+}
+
+.ateliers-callout h2 {
+  margin: 0 0 12px;
+  color: var(--mist);
+  font: 500 clamp(1.8rem, 3vw, 2.7rem) / 1.1 "Space Grotesk", sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.ateliers-callout > div > p:last-child {
+  max-width: 660px;
+  margin: 0;
+  color: rgb(23 31 34 / 75%);
+  line-height: 1.7;
+}
+
+.ateliers-callout .button-link {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 720px) {
+  .ateliers-callout {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

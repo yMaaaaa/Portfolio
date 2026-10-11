@@ -1,61 +1,58 @@
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+
+const pages = [
+  { to: "/", label: "Accueil", end: true },
+  { to: "/cv", label: "Curriculum Vitae" },
+  { to: "/stage", label: "Stages", stage: true },
+  { to: "/ateliers-pro", label: "Ateliers Pro" },
+  { to: "/projects", label: "Projets" },
+  { to: "/veille", label: "Veille" },
+  { to: "/competences", label: "Compétences" },
+  { to: "/contact", label: "Contact" },
+];
 
 export default function Navbar() {
-  const location = useLocation();
-
-  const isActive = (path: string) => location.pathname === path;
+  const { pathname } = useLocation();
 
   return (
-    <nav className="navbar">
+    <header className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <span className="logo-text">Portfolio</span>
+        <Link to="/" className="navbar-logo" aria-label="Mattéo Douteaud, accueil">
+          M<span>.</span>D
         </Link>
-        <ul className="nav-list">
-          <li className="nav-item">
-            <Link
-              to="/"
-              className={`nav-link ${isActive("/") ? "active" : ""}`}
-            >
-              Accueil
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/projects"
-              className={`nav-link ${isActive("/projects") ? "active" : ""}`}
-            >
-              Projets
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/veille"
-              className={`nav-link ${isActive("/veille") ? "active" : ""}`}
-            >
-              Veille
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/personal"
-              className={`nav-link ${isActive("/personal") ? "active" : ""}`}
-            >
-              Vie Perso
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/contact"
-              className={`nav-link ${isActive("/contact") ? "active" : ""}`}
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
+        <nav aria-label="Navigation principale">
+          <ul className="nav-list">
+            {pages.map((page) => (
+              <li className={`nav-item ${page.stage ? "nav-item--stage" : ""}`} key={page.to}>
+                <NavLink
+                  end={page.end}
+                  to={page.to}
+                  className={({ isActive }) =>
+                    `nav-link ${isActive || (page.stage && pathname.startsWith("/stage")) ? "active" : ""}`
+                  }
+                  aria-haspopup={page.stage ? "true" : undefined}
+                >
+                  {page.label}
+                  {page.stage && <span className="nav-caret" aria-hidden="true">⌄</span>}
+                </NavLink>
+                {page.stage && (
+                  <ul className="stage-menu">
+                    <li>
+                      <NavLink to="/stage/siinova">SIINOVA</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/stage/fabrique-numerique">
+                        Fabrique Numérique
+                      </NavLink>
+                    </li>
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }

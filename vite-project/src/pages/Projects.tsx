@@ -1,5 +1,6 @@
 import "./Projects.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Project {
   title: string;
@@ -193,9 +194,9 @@ export default function Projects() {
         <div className="cta-content">
           <h2>Intéressé par un projet similaire?</h2>
           <p>Je suis toujours ouvert à de nouveaux défis et opportunités</p>
-          <a href="/contact" className="cta-button primary">
+          <Link to="/contact" className="cta-button primary">
             Commençons ensemble
-          </a>
+          </Link>
         </div>
       </section>
     </div>

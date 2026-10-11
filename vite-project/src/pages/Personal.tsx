@@ -1,4 +1,5 @@
 import "./Personal.css";
+import { Link } from "react-router-dom";
 
 export default function Personal() {
   const interests = [
@@ -155,9 +156,9 @@ export default function Personal() {
         <div className="closing-content">
           <h2>Voyons ce que nous pouvons créer ensemble!</h2>
           <p>Passionné, curieux, et toujours prêt pour un nouveau défi</p>
-          <a href="/contact" className="cta-button primary">
+          <Link to="/contact" className="button-link">
             Démarrons un projet
-          </a>
+          </Link>
         </div>
       </section>
     </div>

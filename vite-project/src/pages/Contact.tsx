@@ -41,7 +41,7 @@ export default function Contact() {
       setIsSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (err) {
+    } catch {
       setError("Erreur lors de l'envoi, veuillez réessayer.");
     } finally {
       setIsLoading(false);

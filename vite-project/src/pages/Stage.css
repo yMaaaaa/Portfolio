@@ -1,0 +1,233 @@
+.stage-page {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.stage-choice {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  transition:
+    transform 0.4s var(--ease),
+    border-color 0.4s var(--ease);
+}
+
+.stage-choice:hover {
+  border-color: rgb(23 31 34 / 75%);
+  transform: translateY(-5px);
+}
+
+.stage-choice h2 {
+  font-size: 2rem;
+}
+
+.stage-choice .text-link {
+  margin-top: 8px;
+}
+
+.stage-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgb(23 31 34 / 15%);
+  border-bottom: 1px solid rgb(23 31 34 / 15%);
+}
+
+.stage-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 18px;
+  border-right: 1px solid rgb(23 31 34 / 12%);
+}
+
+.stage-facts > div:first-child {
+  padding-left: 0;
+}
+
+.stage-facts > div:last-child {
+  border-right: 0;
+}
+
+.stage-facts span {
+  color: var(--mist);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stage-facts strong {
+  color: var(--mist);
+  font-size: 0.93rem;
+  font-weight: 500;
+}
+
+.stage-facts--compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stage-section {
+  margin-top: 74px;
+}
+
+.stage-section h2 {
+  max-width: 820px;
+  margin: 0 0 18px;
+  color: var(--mist);
+  font: 500 clamp(2rem, 4.5vw, 3.5rem) / 1.05 "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
+}
+
+.stage-section > p:not(.section-label) {
+  max-width: 820px;
+  color: rgb(23 31 34 / 75%);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.stage-missions {
+  margin-top: 45px;
+}
+
+.stage-missions .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-missions .tag-container {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.stage-learning {
+  padding: clamp(28px, 5vw, 55px);
+  border: 1px solid rgb(23 31 34 / 12%);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 85% 10%, rgb(116 139 145 / 10%), transparent 30rem),
+    rgb(23 31 34 / 2%);
+}
+
+.stage-learning > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.stage-competencies {
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid rgb(23 31 34 / 12%);
+  border-radius: 26px;
+  background: rgb(23 31 34 / 2%);
+}
+
+.stage-mapping {
+  overflow: hidden;
+  margin-top: 30px;
+  border: 1px solid rgb(23 31 34 / 16%);
+  border-radius: 15px;
+}
+
+.stage-mapping-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.9fr;
+}
+
+.stage-mapping-row + .stage-mapping-row {
+  border-top: 1px solid rgb(23 31 34 / 13%);
+}
+
+.stage-mapping-row > span {
+  padding: 16px;
+  color: rgb(23 31 34 / 75%);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.stage-mapping-row > span + span {
+  border-left: 1px solid rgb(23 31 34 / 13%);
+}
+
+.stage-mapping-header {
+  background: rgb(23 31 34 / 5%);
+}
+
+.stage-mapping-header > span {
+  color: var(--mist);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.stage-placeholder-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #636467;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.stage-back-link {
+  display: inline-flex;
+  margin-top: 40px;
+  color: var(--mist);
+  font-size: 0.85rem;
+}
+
+.stage-back-link:hover {
+  color: var(--mist);
+}
+
+@media (max-width: 780px) {
+  .stage-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stage-facts > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .stage-facts > div:nth-child(3),
+  .stage-facts > div:nth-child(4) {
+    border-top: 1px solid rgb(23 31 34 / 12%);
+  }
+
+  .stage-mapping-row > span {
+    padding: 12px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-facts > div,
+  .stage-facts > div:first-child,
+  .stage-facts > div:nth-child(2) {
+    padding-inline: 0;
+    border-right: 0;
+  }
+
+  .stage-facts > div + div {
+    border-top: 1px solid rgb(23 31 34 / 12%);
+  }
+
+  .stage-competencies {
+    padding: 20px;
+  }
+
+  .stage-mapping-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-mapping-row > span + span {
+    border-top: 1px solid rgb(23 31 34 / 10%);
+    border-left: 0;
+  }
+
+  .stage-mapping-header {
+    display: none;
+  }
+}

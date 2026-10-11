@@ -1,496 +1,117 @@
-/* Personal Page Styles */
-
 .personal-container {
-  width: 100%;
-  min-height: 100vh;
-  background: #0d0d0d;
-  overflow-x: hidden;
+  padding: 42px clamp(24px, 8vw, 140px) 70px;
 }
 
-/* Hero Section */
+.personal-container .container {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
+
 .personal-hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50vh;
-  padding: 8rem 2rem 4rem;
-  text-align: center;
+  padding: 12px 0 40px;
   overflow: hidden;
-}
-
-.personal-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: transparent;
-  z-index: 1;
-  border-bottom: 2px solid #ff1744;
-}
-
-.hero-blur {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 23, 68, 0.1) 0%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: float 6s ease-in-out infinite;
-  z-index: 0;
-}
-
-.hero-blur:nth-child(1) {
-  top: -200px;
-  left: -100px;
-  animation-delay: 0s;
-}
-
-.hero-blur:nth-child(2) {
-  bottom: -150px;
-  right: -100px;
-  animation-delay: 2s;
-}
-
-.personal-hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  max-width: 600px;
 }
 
 .personal-hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
   margin: 0;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 30px #ff1744;
-  animation: fadeInUp 1s ease-out;
-  color: #ff1744;
+  color: var(--mist);
+  font: 600 clamp(2.8rem, 6vw, 5rem) / 1 "Space Grotesk", sans-serif;
+  letter-spacing: -0.07em;
+}
+
+.personal-hero-content p,
+.intro-content p,
+.values-intro {
+  color: rgb(23 31 34 / 75%);
+  line-height: 1.75;
 }
 
 .personal-hero-content p {
-  font-size: 1.3rem;
-  margin: 0;
-  opacity: 0.95;
-  text-shadow: 0 0 10px #ff1744;
-  animation: fadeInUp 1s ease-out 0.2s both;
-  color: #ccc;
+  margin: 14px 0 0;
 }
 
-/* Animations */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Intro Section */
-.personal-intro {
-  padding: 6rem 2rem;
-  background: #1a1a1a;
-  border-top: 2px solid #ff1744;
-  border-bottom: 2px solid #ff1744;
-  position: relative;
-  z-index: 2;
+.personal-intro,
+.interests-section,
+.values-section {
+  padding: 35px 0;
+  border-top: 1px solid rgb(23 31 34 / 11%);
 }
 
 .intro-content {
-  max-width: 800px;
-  margin: 0 auto;
-  color: white;
+  max-width: 850px;
 }
 
-.intro-content h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0 0 2rem 0;
-  text-align: center;
-  animation: fadeInUp 1s ease-out;
-  color: #ff1744;
+.intro-content h2,
+.interests-section h2,
+.values-section h2 {
+  margin: 0 0 15px;
+  color: var(--mist);
+  font: 500 1.8rem "Space Grotesk", sans-serif;
 }
 
 .intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin: 0 0 1.5rem 0;
-  opacity: 0.95;
-  animation: fadeInUp 1s ease-out 0.1s both;
+  margin: 10px 0;
 }
 
-.intro-content p:last-child {
-  margin-bottom: 0;
-  animation-delay: 0.2s;
-}
-
-/* Interests Section */
-.interests-section {
-  padding: 6rem 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.interests-section h2 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  text-align: center;
-  color: white;
-  margin: 0 0 4rem 0;
-  animation: fadeInUp 1s ease-out;
-}
-
-.interests-grid {
+.interests-grid,
+.values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 15px;
 }
 
-.interest-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 0, 0, 0.2);
-  border-radius: 15px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  color: white;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  animation: slideUp 0.6s ease-out both;
-  position: relative;
-  overflow: hidden;
+.interest-card,
+.value-card {
+  padding: 22px;
+  border: 1px solid rgb(23 31 34 / 13%);
+  border-radius: 18px;
+  background: rgb(23 31 34 / 2%);
 }
 
-.interest-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(218, 11, 11, 0.356) 0%,
-    transparent 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.interest-card:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgb(255, 0, 0);
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.interest-card:hover::before {
-  opacity: 1;
-}
-
-.interest-emoji {
-  font-size: 3.5rem;
-  margin: 0 0 1.2rem 0;
-  display: block;
-}
-
-.interest-card h3 {
+.interest-emoji,
+.value-emoji {
+  margin-bottom: 11px;
   font-size: 1.5rem;
-  font-weight: 700;
-  margin: 1rem 0 0.8rem 0;
-  color: #ff4e4e;
 }
 
-.interest-desc {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0 0 1rem 0;
-  opacity: 0.9;
+.interest-card h3,
+.value-card h3 {
+  margin: 0 0 8px;
+  color: var(--mist);
+  font: 500 1.1rem "Space Grotesk", sans-serif;
+}
+
+.interest-desc,
+.interest-detail,
+.value-card p {
+  margin: 0 0 8px;
+  color: rgb(23 31 34 / 75%);
+  font-size: 0.86rem;
+  line-height: 1.65;
 }
 
 .interest-detail {
-  font-size: 0.9rem;
-  opacity: 0.75;
-  margin: 0;
-  font-style: italic;
-  color: rgba(255, 74, 74, 0.8);
+  color: var(--mist);
+  font-size: 0.76rem;
 }
 
-/* Values Section */
-.values-section {
-  padding: 6rem 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 2;
-}
-
-.values-section h2 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  text-align: center;
-  color: white;
-  margin: 0 0 1rem 0;
-  animation: fadeInUp 1s ease-out;
-}
-
-.values-intro {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
-  margin: 0 0 3rem 0;
-  animation: fadeInUp 1s ease-out 0.1s both;
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  margin-top: 2rem;
-}
-
-.value-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 0, 0, 0.2);
-  border-radius: 15px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  color: white;
-  transition: all 0.3s ease;
-  animation: slideUp 0.6s ease-out both;
-  position: relative;
-}
-
-.value-card:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgb(255, 0, 0);
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.value-emoji {
-  font-size: 3rem;
-  margin: 0 0 1rem 0;
-  display: block;
-  animation: float 3s ease-in-out infinite;
-}
-
-.value-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0.5rem 0 1rem 0;
-  color: #ff4e4e;
-}
-
-.value-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0;
-  opacity: 0.9;
-}
-
-/* Closing Section */
 .personal-closing {
-  padding: 6rem 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.closing-content {
-  max-width: 700px;
-  margin: 0 auto;
-  animation: fadeInUp 1s ease-out;
+  margin-top: 20px;
+  padding: 35px;
+  border: 1px solid rgb(23 31 34 / 13%);
+  border-radius: 22px;
+  background: rgb(23 31 34 / 2%);
 }
 
 .closing-content h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: white;
-  margin: 0 0 1rem 0;
+  margin: 0 0 10px;
+  color: var(--mist);
+  font: 500 1.8rem "Space Grotesk", sans-serif;
 }
 
 .closing-content p {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 18px;
+  color: rgb(23 31 34 / 75%);
 }
 
-/* CTA Button */
-.cta-button {
-  display: inline-block;
-  padding: 0.9rem 2.5rem;
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.cta-button.primary {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  color: #667eea;
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .personal-hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .personal-hero-content p {
-    font-size: 1.1rem;
-  }
-
-  .intro-content h2,
-  .interests-section h2,
-  .values-section h2 {
-    font-size: 2rem;
-  }
-
-  .interests-grid,
-  .values-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .interest-card,
-  .value-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .interest-emoji {
-    font-size: 2.5rem;
-  }
-
-  .value-emoji {
-    font-size: 2.2rem;
-  }
-
-  .closing-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .closing-content p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .personal-hero {
-    padding: 4rem 1rem 2rem;
-    min-height: 40vh;
-  }
-
-  .personal-hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .personal-hero-content p {
-    font-size: 0.95rem;
-  }
-
-  .personal-intro,
-  .interests-section,
-  .values-section,
-  .personal-closing {
-    padding: 3rem 1rem;
-  }
-
-  .intro-content h2,
-  .interests-section h2,
-  .values-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .interests-grid,
-  .values-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .interest-card,
-  .value-card {
-    padding: 1.5rem;
-  }
-
-  .interest-emoji {
-    font-size: 2rem;
-  }
-
-  .value-emoji {
-    font-size: 1.8rem;
-  }
-
-  .interest-card h3,
-  .value-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .closing-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .closing-content p {
-    font-size: 0.95rem;
-  }
-
-  .cta-button {
-    padding: 0.8rem 2rem;
-    font-size: 0.9rem;
-  }
-}
