@@ -25,6 +25,107 @@ const fabriqueWorkshops = [
   },
 ];
 
+const siinovaActivities = [
+  {
+    activityLabel:
+      "Mettre en place et vérifier les niveaux d'habilitation associés à un service.",
+    activityDetails:
+      "Mise en œuvre de la fonction d'accès conditionnel requireRackAccess avec filtrage strict par rôle staff MFA ou éligibilité de l'organisation cliente.",
+    skillLabel: "1.1",
+    skillDetails:
+      "Gestion du patrimoine informatique — Mettre en place et vérifier les niveaux d'habilitation associés à un service.",
+  },
+  {
+    activityLabel:
+      "Traiter des demandes concernant les applications / les services réseau et système.",
+    activityDetails:
+      "Prise en charge et implémentation complète de la demande d'évolution commerciale formulée par le tuteur pour transformer le monitoring technique en fonctionnalité client.",
+    skillLabel: "1.2",
+    skillDetails:
+      "Réponse aux incidents et aux demandes d'assistance et d'évolution — Traiter des demandes concernant les applications / les services réseau et système.",
+  },
+  {
+    activityLabel: "Planifier les activités.",
+    activityDetails:
+      "Planification fine et ordonnancement rigoureux des phases de livraison en production pour éviter l'interruption des flux d'ingestion de données.",
+    skillLabel: "1.4",
+    skillDetails: "Travail en mode projet — Planifier les activités.",
+  },
+  {
+    activityLabel: "Réaliser les tests d'intégration et d'acceptation d'un service.",
+    activityDetails:
+      "Exécution et validation de tests de bout en bout simulant des réponses 401 et 200 sur les nouvelles routes d'API isolées.",
+    skillLabel: "1.5",
+    skillDetails:
+      "Mise à disposition des utilisateurs d'un service informatique — Réaliser les tests d'intégration et d'acceptation d'un service.",
+  },
+  {
+    activityLabel: "Mettre en place son environnement d'apprentissage personnel.",
+    activityDetails:
+      "Conception de projets d'étude personnels en langage Rust et exploration des patrons d'architecture événementielle sous Godot.",
+    skillLabel: "1.6",
+    skillDetails:
+      "Organisation de son développement professionnel — Mettre en place son environnement d'apprentissage personnel.",
+  },
+  {
+    activityLabel:
+      "Participer à la conception de l'architecture d'une solution applicative.",
+    activityDetails:
+      "Élaboration d'une architecture d'ingestion décentralisée « credential-only » supprimant les clés d'accès administrateur globales sur le terrain.",
+    skillLabel: "2.1",
+    skillDetails:
+      "Conception et développement d'une solution applicative — Participer à la conception de l'architecture d'une solution applicative.",
+  },
+  {
+    activityLabel: "Optimisation de requêtes et indexation :",
+    activityDetails:
+      "Réécriture et optimisation algorithmique des fonctions de calcul de la consommation énergétique et de l'état des Mac minis. Cette refonte a permis d'éliminer les balayages complets de tables (table scans) particulièrement coûteux en ressources, en s'appuyant sur l'analyse des plans d'exécution.",
+    skillLabel: "2.2",
+    skillDetails: "Gestion des données — Optimisation de requêtes et indexation.",
+  },
+  {
+    activityLabel: "Implémenter des politiques de rétention automatisées.",
+    activityDetails:
+      "Purge des données brutes après 7 jours pour optimiser l'espace disque. Développement d'un script d'administration de sauvegarde compressée backup.sh avec rétention des fichiers sur 30 jours, automatisé à l'échelle du système.",
+    skillLabel: "2.3",
+    skillDetails:
+      "Gestion des données — Implémenter des politiques de rétention automatisées.",
+  },
+  {
+    activityLabel:
+      "Appliquer la réglementation en matière de collecte et de traitement.",
+    activityDetails:
+      "Prise de décision éthique de non-utilisation de données réelles d'entreprises clientes pour réaliser des tests, préservant la conformité au RGPD et au secret des affaires.",
+    skillLabel: "3.1",
+    skillDetails:
+      "Protection des données à caractère personnel — Appliquer la réglementation en matière de collecte et de traitement.",
+  },
+  {
+    activityLabel: "Gérer les accès et les privilèges appropriés.",
+    activityDetails:
+      "Éradication des clés à hauts privilèges service_role sur les terminaux des utilisateurs finaux et mise en place d'une isolation stricte des accès via des rôles de serveurs limités.",
+    skillLabel: "3.3",
+    skillDetails:
+      "Sécurisation des équipements et des usages des utilisateurs — Gérer les accès et les privilèges appropriés.",
+  },
+  {
+    activityLabel:
+      "Prendre en compte la sécurité dans un projet de développement d'une solution applicative.",
+    activityDetails:
+      "Conception architecturale complète d'un système de limitation de requêtes par fenêtre glissante (rate-limiting) et d'un système d'alerting basé sur l'analyse automatisée des signatures de logs d'erreurs en base de données.",
+    skillLabel: "3.5",
+    skillDetails:
+      "Cybersécurisation d'une solution applicative et de son développement — Prendre en compte la sécurité dans un projet de développement d'une solution applicative.",
+  },
+];
+
+const siinovaPhotos = [
+  "1000022379.jpg",
+  "1000022381.jpg",
+  "1000022382.jpg",
+  "1000022383.jpg",
+];
+
 function StageOverview() {
   return (
     <section className="page-section stage-page">
@@ -138,6 +239,24 @@ function SiinovaStage() {
         </article>
       </div>
 
+      <section className="stage-section stage-gallery">
+        <p className="section-label">EN IMAGES · ESP32-S3</p>
+        <h2>Quelques vues de l'écran embarqué.</h2>
+        <div className="stage-gallery-grid">
+          {siinovaPhotos.map((photo, index) => (
+            <figure className="stage-gallery-item" key={photo}>
+              <img
+                className="stage-gallery-image"
+                src={`${import.meta.env.BASE_URL}images/stage/${photo}`}
+                alt={`Vue ${index + 1} de l'ESP32-S3`}
+                loading="lazy"
+              />
+              <figcaption>ESP32-S3 · vue 0{index + 1}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <section className="stage-section stage-learning">
         <p className="section-label">CE QUE J'EN RETIENS</p>
         <h2>Un projet de bout en bout, avec de vrais enjeux d'exploitation.</h2>
@@ -152,34 +271,26 @@ function SiinovaStage() {
       </section>
 
       <section className="stage-section stage-competencies">
-        <p className="section-label">À COMPLÉTER · RÉFÉRENTIEL BTS SIO SLAM</p>
+        <p className="section-label">RÉFÉRENTIEL BTS SIO SLAM</p>
         <h2>Relier les activités du stage aux compétences.</h2>
         <p>
-          Cet espace est prévu pour associer les activités réellement réalisées
-          pendant le stage aux compétences attendues du référentiel SLAM. Remplace
-          les exemples ci-dessous par tes activités et les compétences
-          correspondantes, en t'appuyant sur tes journaux de bord.
+          Les activités réalisées pendant le stage sont associées aux compétences
+          correspondantes du référentiel BTS SIO.
         </p>
         <div className="stage-mapping" role="table" aria-label="Activités de stage et compétences SLAM à compléter">
           <div className="stage-mapping-row stage-mapping-header" role="row">
             <span role="columnheader">Activité réalisée en stage</span>
             <span role="columnheader">Compétence(s) SLAM mobilisée(s)</span>
-            <span role="columnheader">Preuve ou livrable</span>
           </div>
-          {[1, 2, 3].map((row) => (
-            <div className="stage-mapping-row" role="row" key={row}>
+          {siinovaActivities.map((activity) => (
+            <div className="stage-mapping-row" role="row" key={activity.skillLabel}>
               <span role="cell">
-                <span className="stage-placeholder-label">À REMPLACER</span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <span className="stage-mapping-label">{activity.activityLabel}</span>
+                {activity.activityDetails}
               </span>
               <span role="cell">
-                <span className="stage-placeholder-label">À REMPLACER</span>
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
-              </span>
-              <span role="cell">
-                <span className="stage-placeholder-label">À REMPLACER</span>
-                Ut enim ad minim veniam, quis nostrud exercitation.
+                <span className="stage-competency-code">{activity.skillLabel}</span>
+                {activity.skillDetails}
               </span>
             </div>
           ))}

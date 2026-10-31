@@ -100,6 +100,31 @@
   padding-top: 18px;
 }
 
+.stage-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.stage-gallery-item {
+  min-width: 0;
+  margin: 0;
+}
+
+.stage-gallery-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.stage-gallery-item figcaption {
+  margin-top: 9px;
+  color: rgb(23 31 34 / 70%);
+  font-size: 0.78rem;
+}
+
 .stage-learning {
   padding: clamp(28px, 5vw, 55px);
   border: 1px solid rgb(23 31 34 / 12%);
@@ -129,7 +154,7 @@
 
 .stage-mapping-row {
   display: grid;
-  grid-template-columns: 1.2fr 1.2fr 0.9fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .stage-mapping-row + .stage-mapping-row {
@@ -137,10 +162,12 @@
 }
 
 .stage-mapping-row > span {
+  min-width: 0;
   padding: 16px;
   color: rgb(23 31 34 / 75%);
   font-size: 0.85rem;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .stage-mapping-row > span + span {
@@ -158,13 +185,22 @@
   letter-spacing: 0.04em;
 }
 
-.stage-placeholder-label {
+.stage-mapping-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--mist);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.stage-competency-code {
   display: block;
   margin-bottom: 6px;
   color: #636467;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
 .stage-back-link {
@@ -195,6 +231,10 @@
   .stage-mapping-row > span {
     padding: 12px;
     font-size: 0.78rem;
+  }
+
+  .stage-gallery-grid {
+    gap: 18px;
   }
 }
 
@@ -230,4 +270,10 @@
   .stage-mapping-header {
     display: none;
   }
+
+  .stage-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
 }
