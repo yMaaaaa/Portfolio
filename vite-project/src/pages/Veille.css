@@ -40,6 +40,12 @@
   line-height: 1.7;
 }
 
+.veille-hero-content .veille-scope-note {
+  max-width: 760px;
+  margin-top: 12px;
+  font-size: 0.82rem;
+}
+
 .veille-container .container {
   width: min(100% - 48px, 1200px);
   margin-inline: auto;
@@ -165,11 +171,58 @@
   font: 500 1.12rem / 1.35 "Space Grotesk", sans-serif;
 }
 
+.news-source {
+  margin: 10px 0 0;
+  color: rgb(23 31 34 / 75%);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
 .news-description {
   margin: 13px 0 0;
   color: rgb(23 31 34 / 75%);
   font-size: 0.87rem;
   line-height: 1.7;
+}
+
+.news-relevance,
+.news-preparation,
+.news-no-link {
+  margin: 12px 0 0;
+  color: rgb(23 31 34 / 75%);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.news-relevance strong {
+  color: var(--mist);
+}
+
+.news-preparation,
+.news-no-link {
+  padding-top: 10px;
+  border-top: 1px solid rgb(23 31 34 / 10%);
+  font-size: 0.76rem;
+}
+
+.news-source-link {
+  display: inline-flex;
+  margin-top: 14px;
+  padding: 8px 12px;
+  border: 1px solid rgb(23 31 34 / 22%);
+  border-radius: 100px;
+  color: var(--mist);
+  font-size: 0.76rem;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.news-source-link:hover,
+.news-source-link:focus-visible {
+  border-color: rgb(23 31 34 / 65%);
+  background: rgb(23 31 34 / 7%);
 }
 
 .news-footer {
